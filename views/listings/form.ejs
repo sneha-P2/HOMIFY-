@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; padding: 20px; background: linear-gradient(to bottom right, #6865655d, #f8f9fa6b);">
+  <form method="POST" action="/listings" class="bg-white p-5 rounded shadow" style="width: 750px;">
+    <h3 class="text-center text-danger mb-3">Create New Listing</h3>
+    <p class="text-center text-muted mb-4">Fill in the details below</p>
+
+    <div class="mb-3">
+      <label for="title" class="form-label text-black">Title</label>
+      <input type="text" class="form-control" id="title" name="listing[title]" value="" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label text-black" >Description</label>
+      <textarea class="form-control" id="description" name="listing[description]" rows="3" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label text-black">Image URL</label>
+      <input type="text" class="form-control" name="listing[image]" id="image" value="">
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label text-black">Price</label>
+      <input type="" class="form-control" name="listing[price]" id="price" value="" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label text-black">Location</label>
+      <input type="text" class="form-control" name="listing[location]" id="location" value="" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="country" class="form-label text-black">Country</label>
+      <input type="text" class="form-control" name="listing[country]" id="country" value="" required>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100">Add Listing</button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+
+  <body>
+    <div class="list-group">
+      <h3 class="list-group-item list-group-item-action active bg-danger">Listing Data</h3>
+      <h5 class="list-group-item list-group-item-action">
+        <%= listing.title %>
+      </h5>
+      <img src="<%= listing.image %>" class="card-img-top listing-img" alt="listing-image"
+        style="width: 400px; height: 400px; object-fit: cover;" />
+      <p class="list-group-item list-group-item-action">
+        <%= listing.description %>
+      </p>
+      <p class="list-group-item list-group-item-action">
+        <% if (listing.price !=null) { %>
+          &#8377;<%= listing.price.toLocaleString("en-IN") %>
+            <% } %></a>
+              <p class="list-group-item list-group-item-action">
+                <%= listing.location %>
+              </p>
+              <p class="list-group-item list-group-item-action">
+                <%= listing.country %>
+              </p>
+    </div>
+    <div class="edit-btn">
+      <a href="/listings/<%= listing._id %>/edit" type="button" class="btn btn-outline-danger">Edit Listing</a>
+      <form method="post" action="/listings/<%= listing._id %>?_method=delete">
+        <button class="btn btn-dark" type="submit button"> Delete listing</button>
+      </form>
+    </div>

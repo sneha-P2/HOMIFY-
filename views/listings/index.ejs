@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') %>
+<h1 class="text-danger">All Listings</h1>
+<!-- <form method="get" action="/listings/new">
+    <button>Add New Listings</button>
+</form> -->
+<div class="homify-listing">
+<% for (let listing of allListings) { %>
+<div class="card listing-card" style="width: 26rem; height: 450px;">
+<img src="<%= listing.image %>" class="card-img-top listing-img" alt="listing-image"/>
+  <div class="card-body">
+    <h5 class="card-title"><i class="fa-regular fa-circle-check">&nbsp;&nbsp;</i><%= listing.title %></h5>
+    <p class="card-text"><%= listing.description %></p>
+    <p class="card-text"><i class="fa-solid fa-thumbtack">&nbsp;&nbsp;</i><%= listing.location %></p>
+    <p class="card-text"><i class="fa-solid fa-globe"></i> &nbsp; &nbsp;<%= listing.country %></p>
+    <a href="/listings/<%= listing._id %>" class="btn btn-danger">View Details</a>
+  </div>
+</div>
+<% } %>
+</div>
+
+

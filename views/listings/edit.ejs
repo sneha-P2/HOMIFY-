@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') %>
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; padding: 20px; background: linear-gradient(to bottom right, #dee2e6, #f8f9fa);">
+  <form method="post" action="/listings/<%= listing._id %>?_method=put" class="bg-white p-5 rounded shadow" style="width: 750px;">
+    <h3 class="text-center text-danger mb-3">Edit Listing</h3>
+    <p class="text-center text-muted mb-4">Update your listing details below</p>
+
+    <div class="mb-3">
+      <label for="title" class="form-label text-black">Change Title</label>
+      <input type="text" class="form-control" id="title" name="listing[title]" value="<%= listing.title %>" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label text-black">Edit Description</label>
+      <textarea class="form-control" id="description" name="listing[description]" rows="3" required><%= listing.description %></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label text-black">Change Image URL</label>
+      <input type="text" class="form-control" name="listing[image]" id="image" value="<%= listing.image %>" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label text-black">Change Price</label>
+      <input type="number" class="form-control" name="listing[price]" id="price" value="<%= listing.price %>" readonly>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label text-black">Change Location</label>
+      <input type="text" class="form-control" name="listing[location]" id="location" value="<%= listing.location %>"required>
+    </div>
+
+    <div class="mb-4">
+      <label for="country" class="form-label text-black">Change Country</label>
+      <input type="text" class="form-control" name="listing[country]" id="country" value="<%= listing.country %>" required>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100">Update Listing</button>
+  </form>
+</div>
+
