@@ -51,10 +51,11 @@ let validateListing = (req, res, next) => {
     
 
 // HOME ROUTE
-app.get("/",wrapAsync( async (req, res) => {
-    const allListings = await Listing.find({});
-    res.render("listings/index", { allListings });
-}));
+
+app.get("/", (req, res) => {
+  res.render("home"); // You must have views/home.ejs file
+});
+
 
 // INDEX: Show all listings
 app.get("/listings", async (req, res) => {
